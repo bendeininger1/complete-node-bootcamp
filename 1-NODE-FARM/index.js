@@ -20,6 +20,8 @@ const server = http.createServer((req,res) => {
         res.end('This is the OVERVIEW');
     } else if (pathName === '/product'){
         res.end('This is the PRODUCT');
+
+        // API
     } else if (pathName === '/api') {
         res.writeHead(200, {
           'Content-type': 'application/json'
