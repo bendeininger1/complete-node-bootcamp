@@ -16,9 +16,13 @@ const dataObj = JSON.parse(data);
 const server = http.createServer((req,res) => {
     const pathName = req.url ;
 
+    // Overview Page
     if(pathName === '/' || pathName === '/overview'){
         res.end('This is the OVERVIEW');
-    } else if (pathName === '/product'){
+    } 
+    
+    // Product Page
+    else if (pathName === '/product'){
         res.end('This is the PRODUCT');
 
         // API
@@ -28,6 +32,7 @@ const server = http.createServer((req,res) => {
         });
         res.end(data);
     
+    // Not Found
     } else {
         res.writeHead(404, {
             'Content-type': 'text/html',
