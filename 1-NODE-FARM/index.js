@@ -22,7 +22,10 @@ const server = http.createServer((req,res) => {
 
     // Overview Page
     if(pathName === '/' || pathName === '/overview'){
-        res.end('This is the OVERVIEW');
+        res.writeHead(200, {
+            'Content-type': 'text/html'
+          });
+        res.end(tempOverview);
     } 
     
     // Product Page
