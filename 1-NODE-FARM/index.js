@@ -33,9 +33,10 @@ const server = http.createServer((req,res) => {
             'Content-type': 'text/html'
           });
 
-        const cardsHtml = dataObj.map( el => replaceTemplate(tempCard, el))
+        const cardsHtml = dataObj.map( el => replaceTemplate(tempCard, el)).join('');
+        const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml);
 
-        res.end(tempOverview);
+        res.end(output);
     } 
     
     // Product Page
